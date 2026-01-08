@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mini Event System - Events</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f8; color: #333; }
+h2 { color: #2c3e50; }
+table { border-collapse: collapse; width: 70%; margin-top: 20px; }
+th, td { border: 1px solid #555; padding: 8px; text-align: left; }
+input, button, select { margin: 5px 0; padding: 5px; }
+button { cursor: pointer; background-color: #3498db; color: #fff; border: none; border-radius: 5px; }
+button:hover { background-color: #2980b9; }
+</style>
+<script>
+function validateForm() {
+    let name = document.forms["eventForm"]["name"].value;
+    let date = document.forms["eventForm"]["event_date"].value;
+    let location = document.forms["eventForm"]["location"].value;
+    if(name=="" || date=="" || location=="") {
+        alert("All fields are required!");
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+
+<h2>Events</h2>
+
+<form name="eventForm" onsubmit="return validateForm()">
+    Event Name: <input type="text" name="name">
+    Date: <input type="date" name="event_date">
+    Location: <input type="text" name="location">
+    <button type="submit">Add Event</button>
+</form>
+
+<table>
+<tr><th>ID</th><th>Name</th><th>Date</th><th>Location</th></tr>
+<tr><td>1</td><td>Coding Workshop</td><td>2026-01-15</td><td>Room 101</td></tr>
+<tr><td>2</td><td>Art Expo</td><td>2026-01-20</td><td>Main Hall</td></tr>
+<tr><td>3</td><td>Music Night</td><td>2026-01-25</td><td>Auditorium</td></tr>
+</table>
+
+</body>
+</html>
